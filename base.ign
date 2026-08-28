@@ -1,34 +1,39 @@
-variant: fcos
-version: 1.5.0
-
-passwd:
-  users:
-    - name: core
-      ssh_authorized_keys:
-        - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEKT7MspOmagHN02N1T3FBxXV4bLCDDb9eHLkbFvR+W6 vps-provisioning
-
-systemd:
-  units:
-    - name: sshd.service
-      enabled: true
-    - name: podman.socket
-      enabled: true
-
-storage:
-  files:
-    - path: /etc/ssh/sshd_config.d/10-hardening.conf
-      mode: 0600
-      contents:
-        inline: |
-          PermitRootLogin no
-          PasswordAuthentication no
-          KbdInteractiveAuthentication no
-          PubkeyAuthentication yes
-          AuthenticationMethods publickey
-          MaxAuthTries 3
-          LoginGraceTime 20
-          ClientAliveInterval 300
-          ClientAliveCountMax 2
-          X11Forwarding no
-          AllowTcpForwarding no
-          AllowAgentForwarding no
+{
+  "ignition": {
+    "version": "3.4.0"
+  },
+  "passwd": {
+    "users": [
+      {
+        "name": "core",
+        "sshAuthorizedKeys": [
+          "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEKT7MspOmagHN02N1T3FBxXV4bLCDDb9eHLkbFvR+W6 vps-provisioning"
+        ]
+      }
+    ]
+  },
+  "storage": {
+    "files": [
+      {
+        "path": "/etc/ssh/sshd_config.d/10-hardening.conf",
+        "contents": {
+          "compression": "gzip",
+          "source": "data:;base64,H4sIAAAAAAAC/2zOO26FMBCF4d6r8BLuYwUWUqIoQUIRRdrBHsEIM4PsMY/dR9CR3PY7p/gbTBPpt4h+SU9sWUwDOa+Sgis6ICt5UJJz+ezCBysm8EoL/t+b0o24//Eds7lSjTpIyHYuXSQ/4m5q2I5LmwizfZoz5T2Bx5YmtI+bqSIhq4u04FmwQLTP28UrKaw1bPZhfu73N0krpEDcH2EuRllbP79Q1yPr1X8DAAD//9omPF8UAQAA"
+        },
+        "mode": 384
+      }
+    ]
+  },
+  "systemd": {
+    "units": [
+      {
+        "enabled": true,
+        "name": "sshd.service"
+      },
+      {
+        "enabled": true,
+        "name": "podman.socket"
+      }
+    ]
+  }
+}
