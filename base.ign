@@ -6,6 +6,7 @@
     "users": [
       {
         "name": "core",
+        "passwordHash": "$6$WfpJrm7dis50merh$RetmWVmZpnGlg.DhYVbdbmEr7wlY8tdIOSlfde39js1pMXLr/.AHajFTLfRRMkYv7ZTi9opYLb1okq7SIlmVQ/",
         "sshAuthorizedKeys": [
           "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEKT7MspOmagHN02N1T3FBxXV4bLCDDb9eHLkbFvR+W6 vps-provisioning"
         ]
@@ -18,7 +19,7 @@
         "path": "/etc/ssh/sshd_config.d/10-hardening.conf",
         "contents": {
           "compression": "gzip",
-          "source": "data:;base64,H4sIAAAAAAAC/2zOO26FMBCF4d6r8BLuYwUWUqIoQUIRRdrBHsEIM4PsMY/dR9CR3PY7p/gbTBPpt4h+SU9sWUwDOa+Sgis6ICt5UJJz+ezCBysm8EoL/t+b0o24//Eds7lSjTpIyHYuXSQ/4m5q2I5LmwizfZoz5T2Bx5YmtI+bqSIhq4u04FmwQLTP28UrKaw1bPZhfu73N0krpEDcH2EuRllbP79Q1yPr1X8DAAD//9omPF8UAQAA"
+          "source": "data:;base64,H4sIAAAAAAAC/2zOTcqDQAzG8f2cYo7gxwkG4X0prSDFRbdxDDZ0TMpM/Lp90Z3g9pfA/2kwjqRPEX3IQGxZTAMpLRJ7N+kbWcmDkrDdMJl7199YMYJXmvHioZm6D24XhxrWXdtImGxpjth/BI8tjWiLzFSBkNUFmvFIzBBsmZ28kom1htUW5pXnfxIXiD3xsI92IcjS+u+FugFZz/4LAAD//6XbJ9D2AAAA"
         },
         "mode": 384
       }
